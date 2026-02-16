@@ -1,49 +1,22 @@
-export default function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Content-Type', 'application/json');
-
-  const vitals = [
-    {
-      patientId: "P001",
-      temperature: 36.8,
-      heartRate: 75,
-      bloodPressure: "120/80",
-      o2Saturation: 98,
-      respiratoryRate: 16,
-      timestamp: "2024-02-15T10:30:00Z"
-    },
-    {
-      patientId: "P002",
-      temperature: 37.2,
-      heartRate: 88,
-      bloodPressure: "125/82",
-      o2Saturation: 96,
-      respiratoryRate: 18,
-      timestamp: "2024-02-15T10:30:00Z"
-    },
-    {
-      patientId: "P003",
-      temperature: 36.9,
-      heartRate: 72,
-      bloodPressure: "118/79",
-      o2Saturation: 99,
-      respiratoryRate: 15,
-      timestamp: "2024-02-15T10:30:00Z"
-    }
-  ];
-
-  const path = req.url || '/';
-  
-  if (path === '/' || path === '/api/vitals') {
-    return res.status(200).json(vitals);
-  }
-
-  const patientId = path.split('/').pop();
-  const vital = vitals.find(v => v.patientId === patientId);
-  
-  if (vital) {
-    return res.status(200).json(vital);
-  }
-  
-  return res.status(404).json({ error: 'Not found' });
-}
+[
+  {"patientId":"P001","temperature":36.8,"heartRate":75,"bloodPressure":"120/80","o2Saturation":98,"respiratoryRate":16,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P002","temperature":37.2,"heartRate":88,"bloodPressure":"125/82","o2Saturation":96,"respiratoryRate":18,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P003","temperature":36.9,"heartRate":72,"bloodPressure":"118/79","o2Saturation":99,"respiratoryRate":15,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P004","temperature":38.9,"heartRate":118,"bloodPressure":"95/58","o2Saturation":91,"respiratoryRate":26,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P005","temperature":37.1,"heartRate":82,"bloodPressure":"130/85","o2Saturation":97,"respiratoryRate":17,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P006","temperature":37.8,"heartRate":95,"bloodPressure":"110/70","o2Saturation":95,"respiratoryRate":20,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P007","temperature":36.7,"heartRate":70,"bloodPressure":"122/78","o2Saturation":99,"respiratoryRate":14,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P008","temperature":36.6,"heartRate":68,"bloodPressure":"115/75","o2Saturation":98,"respiratoryRate":15,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P009","temperature":39.4,"heartRate":125,"bloodPressure":"88/52","o2Saturation":89,"respiratoryRate":28,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P010","temperature":37.3,"heartRate":84,"bloodPressure":"128/82","o2Saturation":97,"respiratoryRate":17,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P011","temperature":37.5,"heartRate":90,"bloodPressure":"115/72","o2Saturation":96,"respiratoryRate":18,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P012","temperature":36.5,"heartRate":65,"bloodPressure":"120/78","o2Saturation":99,"respiratoryRate":14,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P013","temperature":38.6,"heartRate":112,"bloodPressure":"92/55","o2Saturation":92,"respiratoryRate":24,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P014","temperature":36.8,"heartRate":74,"bloodPressure":"118/76","o2Saturation":98,"respiratoryRate":16,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P015","temperature":38.2,"heartRate":102,"bloodPressure":"100/62","o2Saturation":93,"respiratoryRate":22,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P016","temperature":37.0,"heartRate":78,"bloodPressure":"125/80","o2Saturation":98,"respiratoryRate":16,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P017","temperature":36.7,"heartRate":70,"bloodPressure":"116/74","o2Saturation":99,"respiratoryRate":15,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P018","temperature":38.4,"heartRate":108,"bloodPressure":"98/60","o2Saturation":93,"respiratoryRate":23,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P019","temperature":36.6,"heartRate":66,"bloodPressure":"120/76","o2Saturation":99,"respiratoryRate":14,"timestamp":"2026-02-15T08:00:00Z"},
+  {"patientId":"P020","temperature":39.1,"heartRate":115,"bloodPressure":"90/54","o2Saturation":90,"respiratoryRate":27,"timestamp":"2026-02-15T08:00:00Z"}
+]
